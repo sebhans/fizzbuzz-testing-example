@@ -1,6 +1,7 @@
 package eu.bbv.fizzbuzz;
 
 import eu.bbv.fizzbuzz.math.Does;
+import eu.bbv.fizzbuzz.output.CombinedOutput;
 import eu.bbv.fizzbuzz.output.NumberOutput;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +50,6 @@ class SimpleSelectorTest {
     void mod3AndMod5YieldsFizzBuzz() {
         when(does.divide(3, 1)).thenReturn(true);
         when(does.divide(5, 1)).thenReturn(true);
-        assertThat(selector.select(1)).isEqualTo(FIZZBUZZ);
+        assertThat(selector.select(1)).isEqualTo(new CombinedOutput(FIZZ, BUZZ));
     }
 }
